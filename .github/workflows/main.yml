@@ -28,6 +28,6 @@ jobs:
           cd simple-api
           mvn -B verify sonar:sonar \
           -Dsonar.projectKey=devops-livecoding \
-          -Dsonar.organization=efreiparis \
+          -Dsonar.organization=ayoub10reyes \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
