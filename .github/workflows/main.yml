@@ -11,19 +11,23 @@ jobs:
   test-backend:
     runs-on: ubuntu-22.04
     steps:
-      # Checkout your GitHub
+      # Step 1: Checkout your GitHub repository
       - name: Checkout code
         uses: actions/checkout@v2.5.0
 
-      # Set up JDK 17
+      # Step 2: Set up JDK 17
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # Navigate to the `simple-api` directory and build with Maven
-      - name: Build and test with Maven
+      # Step 3: Build, test, and analyze with SonarCloud
+      - name: Build, test, and analyze with SonarCloud
         run: |
           cd simple-api
-          mvn clean verify
+          mvn -B verify sonar:sonar \
+          -Dsonar.projectKey=devops-2024 \
+          -Dsonar.organization=devops-school \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
