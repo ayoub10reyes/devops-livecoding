@@ -27,7 +27,7 @@ jobs:
         run: |
           cd simple-api
           mvn -B verify sonar:sonar \
-          -Dsonar.projectKey=ayoub10reyes \
+          -Dsonar.projectKey=devops-livecoding \
           -Dsonar.organization=efreiparis \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
