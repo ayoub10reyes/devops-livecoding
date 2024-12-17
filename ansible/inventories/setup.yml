@@ -1,0 +1,8 @@
+all:
+  vars:
+    ansible_user: admin  # Replace with your SSH username
+    ansible_ssh_private_key_file: ~/.ssh/id_rsa  # Use the key you copied to WSL
+  children:
+    prod:
+      hosts:
+        ayoub.adnane.takima.cloud:  # Replace with your actual hostname or IP

@@ -30,4 +30,4 @@ jobs:
           -Dsonar.projectKey=ayoub10reyes_devops-livecoding \
           -Dsonar.organization=efreiparis \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
